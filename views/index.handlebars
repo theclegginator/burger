@@ -55,7 +55,7 @@
             };
             console.log(newburger)
 
-            // Send the POST request.
+            // Send the POST request with the new burger.
             $.ajax("/api/burgers", {
                 type: "POST",
                 data: newburger
@@ -74,7 +74,6 @@
                 let id = $(this).data("burgerid");
 
                 let updatedburger = {
-                    //burger_name: $(".devourBurger [name=burger]").val().trim(),
                     devoured: 1
                 };
 
@@ -85,7 +84,7 @@
                 }).then(
                     function () {
                         console.log("updated id ", id);
-                        // Reload the page to get the updated list
+                        // Reload the page to get the updated list of burgers.
                         location.reload();
                     }
                 );

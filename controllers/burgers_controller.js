@@ -2,20 +2,22 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model for burger to use each function that we made.
 var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// ROUTES ===================================
+// on the default directory, run the selectAll function for burger to get all existing burgers
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var burgerObject = {
       burger: data
     };
     console.log(burgerObject);
-    res.render("index", burgerObject);
+    res.render("index", burgerObject); // rerender the index once we run this.
   });
 });
 
+// adding a new burger
 router.post("/api/burgers", function(req, res) {
   burger.insertOne([
     "burger_name", "devoured"
@@ -29,6 +31,7 @@ router.post("/api/burgers", function(req, res) {
   });
 });
 
+// Updating a single burger
 router.put('/api/burgers/:id', function(req, res) {
   burger.updateOne([
       "devoured"

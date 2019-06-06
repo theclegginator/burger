@@ -3,7 +3,7 @@ const mysql = require("mysql");
 
 // Provide mySQL module with correct connection settings.
 var connection;
-if (process.env.JAWSDB_URL) {
+if (process.env.JAWSDB_URL) { // for jawsDB connection
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
@@ -15,7 +15,7 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-// Make the connection to the sequel server and provide error logging if necessary.
+// Connect to SQL Server
 connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
