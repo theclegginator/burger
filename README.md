@@ -14,3 +14,18 @@ The following Node modules are used (and are included in the package.json file):
 * They then add a brand new burger to the database and eat said burger, moving it to the other section of the page.
   
 ![Screenshot](README_images/burger-demo.gif)
+
+### Menu Section - Existing Burgers
+* This section of the page shows all existing burgers that have not been eaten. 
+* This is pull from a jQuery AJAX call.
+![Screenshot](README_images/menu.png)
+
+### Add a Burger - Creating a new SQL Entry
+* This section of the page allows the user to add a new burger.
+* The burger will be coerced into the SQL schema via the ORM functions.
+![Screenshot](README_images/New-burger.png)
+
+### Burgers Already Enjoyed - Burgers that have been updated
+* This section of the page shows burgers that were prevously created and "devoured".
+* These burgers display here based on a boolean value in the database.
+![Screenshot](README_images/eaten.png)
