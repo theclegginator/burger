@@ -18,7 +18,7 @@ The following Node modules are used (and are included in the package.json file):
 ### Menu Section - Existing Burgers
 * This section of the page shows all existing burgers that have not been eaten. 
 * This is pull from a jQuery AJAX call.
-![Screenshot](README_images/menu.png)
+![Screenshot](README_images/Menu.png)
 
 ### Add a Burger - Creating a new SQL Entry
 * This section of the page allows the user to add a new burger.
