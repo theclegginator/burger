@@ -2,13 +2,18 @@
 const mysql = require("mysql");
 
 // Provide mySQL module with correct connection settings.
-var connection = mysql.createConnection({
-  host: "127.0.0.1",
-  port: 3306,
-  user: "root",
-  password: "docker",
-  database: "burgers_db"
-});
+var connection;
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+    host: "127.0.0.1",
+    port: 3306,
+    user: "root",
+    password: "docker",
+    database: "burgers_db"
+  });
+}
 
 // Make the connection to the sequel server and provide error logging if necessary.
 connection.connect(function(err) {
